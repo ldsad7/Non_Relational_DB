@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="wrapper">
+        <form action="{{ url_for('delete') }}" method="POST" class="myForm">
+            <h1>Найди участника ВОВ</h1>
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <label for="last_name_1">{{ form.last_name.label }}</label>
+                <input type="text" class="form-control" id="last_name_1" placeholder="Григорьев" name="last_name">
+            </div>
+            <div class="form-group">
+                <label for="first_name_1">{{ form.first_name.label }}</label>
+                <input type="text" class="form-control" id="first_name_1" placeholder="Эдуард" name="first_name">
+            </div>
+            <div class="form-group">
+                <label for="patronymic_1">{{ form.patronymic.label }}</label>
+                <input type="text" class="form-control" id="patronymic_1" placeholder="Геннадьевич" name="patronymic">
+            </div>
+            <div class="form-group">
+                <label for="date_of_birth_1">{{ form.date_of_birth.label }}</label>
+                <input type="date" class="form-control" id="date_of_birth_1" placeholder="11.10.1996" name="date_of_birth">
+            </div>
+            <div class="form-group">
+                <label for="photo_1">{{ form.photo.label }}</label>
+                <input type="text" class="form-control" id="photo_1" name="photo" placeholder="https://roadheroes.storage.yandexcloud.net/9c16fec5c53e0cb9f69d6d98f993b0b3_origin.jpg">
+            </div>
+        </form>
+        <form action="{{ url_for('delete') }}" method="POST" class="myForm">
+            <h1>Удали его из базы</h1>
+            {{ form.hidden_tag() }}
+            <input type="text" name="id" id="id" style="display:none;">
+            <div class="form-group">
+                <label for="last_name_2">{{ form.last_name.label }}</label>
+                <input type="text" class="form-control" id="last_name_2" placeholder="Григорьев" name="last_name">
+            </div>
+            <div class="form-group">
+                <label for="first_name_2">{{ form.first_name.label }}</label>
+                <input type="text" class="form-control" id="first_name_2" placeholder="Эдуард" name="first_name">
+            </div>
+            <div class="form-group">
+                <label for="patronymic_2">{{ form.patronymic.label }}</label>
+                <input type="text" class="form-control" id="patronymic_2" placeholder="Геннадьевич" name="patronymic">
+            </div>
+            <div class="form-group">
+                <label for="date_of_birth_2">{{ form.date_of_birth.label }}</label>
+                <input type="date" class="form-control" id="date_of_birth_2" placeholder="11.10.1996" name="date_of_birth">
+            </div>
+            <div class="form-group">
+                <label for="photo_2">{{ form.photo.label }}</label>
+                <input type="text" class="form-control" id="photo_2" name="photo" placeholder="https://roadheroes.storage.yandexcloud.net/9c16fec5c53e0cb9f69d6d98f993b0b3_origin.jpg">
+            </div>
+            <button type="submit" class="btn btn-primary">Удалить</button>
+        </form>
+    </div>
+{% endblock %}
